@@ -1,54 +1,428 @@
-<div style="width: 1100px; height: 293px; position: relative; overflow: hidden">
-  <div style="width: 236.49px; left: 811px; top: 144px; position: absolute; color: black; font-size: 18px; font-family: Raleway; font-weight: 400; line-height: 24.30px; word-wrap: break-word">наб. Принсенграхт 263- 265, Амстердам</div>
-  <div style="width: 129.72px; height: 0px; left: 810px; top: 143px; position: absolute; outline: 1px black solid; outline-offset: -0.50px"></div>
-  <div style="width: 239.48px; height: 24px; left: 810px; top: 119px; position: absolute; color: black; font-size: 18px; font-family: Raleway; font-weight: 400; line-height: 24.30px; word-wrap: break-word">info@sobaka.ge</div>
-  <div style="width: 131.71px; height: 0px; left: 810.52px; top: 119px; position: absolute; outline: 1px black solid; outline-offset: -0.50px"></div>
-  <div style="width: 239.48px; height: 24px; left: 810.52px; top: 95px; position: absolute; color: black; font-size: 18px; font-family: Raleway; font-weight: 400; line-height: 24.30px; word-wrap: break-word">+9 999 555 5555</div>
-  <div style="width: 148px; height: 105px; left: 478px; top: 92px; position: absolute; overflow: hidden">
-    <div style="width: 124.05px; height: 94.84px; left: 11.39px; top: 2.79px; position: absolute; outline: 6px black solid; outline-offset: -3px"></div>
-    <div style="width: 129.11px; height: 104.65px; left: 9.03px; top: 1.16px; position: absolute; background: black"></div>
-  </div>
-  <div style="width: 110px; height: 0px; left: 331.48px; top: 155px; position: absolute; outline: 1px black solid; outline-offset: -0.50px"></div>
-  <div style="left: 331.48px; top: 133px; position: absolute; color: black; font-size: 18px; font-family: Raleway; font-weight: 400; word-wrap: break-word">об аукционе</div>
-  <div style="width: 6px; height: 6px; left: 312px; top: 142px; position: absolute; border-radius: 9999px; border: 0.50px black solid"></div>
-  <div style="width: 151px; height: 0px; left: 148.48px; top: 155px; position: absolute; outline: 1px black solid; outline-offset: -0.50px"></div>
-  <div style="left: 148.48px; top: 133px; position: absolute; color: black; font-size: 18px; font-family: Raleway; font-weight: 400; word-wrap: break-word">посмотреть лоты</div>
-  <div style="width: 6px; height: 6px; left: 130px; top: 142px; position: absolute; border-radius: 9999px; border: 0.50px black solid"></div>
-  <div style="left: 50px; top: 133px; position: absolute; color: black; font-size: 18px; font-family: Raleway; font-weight: 400; word-wrap: break-word">главная</div>
-</div>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аукцион вещей, в которые никто не верил</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            overflow-x: hidden;
+            min-width: 320px;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        /* Header Styles */
+        .header {
+            width: 100%;
+            height: 293px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-info {
+            position: absolute;
+            right: 50px;
+            top: 95px;
+            text-align: right;
+        }
+        
+        .contact-item {
+            margin-bottom: 24px;
+            position: relative;
+        }
+        
+        .contact-item:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 131.71px;
+            height: 1px;
+            background: black;
+        }
+        
+        .contact-text {
+            color: black;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24.30px;
+        }
+        
+        .logo {
+            position: absolute;
+            left: 478px;
+            top: 92px;
+            width: 148px;
+            height: 105px;
+            overflow: hidden;
+        }
+        
+        .logo-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .logo-outline {
+            width: 124.05px;
+            height: 94.84px;
+            position: absolute;
+            left: 11.39px;
+            top: 2.79px;
+            border: 6px solid black;
+        }
+        
+        .logo-fill {
+            width: 129.11px;
+            height: 104.65px;
+            position: absolute;
+            left: 9.03px;
+            top: 1.16px;
+            background: black;
+        }
+        
+        .nav {
+            position: absolute;
+            left: 50px;
+            top: 133px;
+            display: flex;
+            gap: 183px;
+        }
+        
+        .nav-item {
+            position: relative;
+            color: black;
+            font-size: 18px;
+            font-weight: 400;
+            text-decoration: none;
+        }
+        
+        .nav-item:after {
+            content: '';
+            position: absolute;
+            bottom: -22px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: black;
+        }
+        
+        .nav-dot {
+            position: absolute;
+            left: -22px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            border: 0.5px solid black;
+        }
+        
+        /* Hero Section */
+        .hero {
+            width: 100%;
+            height: 757px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            opacity: 0.6;
+        }
+        
+        .hero-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 50px;
+        }
+        
+        .hero-title {
+            color: white;
+            font-size: 96px;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 115px;
+            letter-spacing: 30px;
+        }
+        
+        .hero-title-1 {
+            position: absolute;
+            top: 165px;
+            left: 50px;
+        }
+        
+        .hero-title-2 {
+            position: absolute;
+            top: 300px;
+            left: 380px;
+            text-align: center;
+        }
+        
+        .hero-title-3 {
+            position: absolute;
+            top: 435px;
+            right: 50px;
+            text-align: right;
+        }
+        
+        .hero-subtitle {
+            position: absolute;
+            bottom: 668px;
+            left: 50px;
+            color: white;
+            font-size: 20px;
+            font-weight: 400;
+            text-transform: uppercase;
+            line-height: 28px;
+        }
+        
+        .cta-button {
+            position: absolute;
+            bottom: 656px;
+            right: 50px;
+            width: 256px;
+            height: 48px;
+            border: 1px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: 500;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: white;
+            color: black;
+        }
+        
+        /* Footer */
+        .footer {
+            width: 100%;
+            height: 176px;
+            position: relative;
+            padding: 0 50px;
+        }
+        
+        .footer-contact {
+            position: absolute;
+            left: 50px;
+            top: 0;
+        }
+        
+        .footer-nav {
+            position: absolute;
+            right: 50px;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 21px;
+        }
+        
+        .footer-nav-item {
+            position: relative;
+            color: black;
+            font-size: 18px;
+            font-weight: 400;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .footer-nav-item:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 100%;
+            height: 1px;
+            background: black;
+        }
+        
+        .social-icons {
+            position: absolute;
+            right: 50px;
+            top: 49px;
+            display: flex;
+            gap: 12px;
+        }
+        
+        .social-icon {
+            width: 48px;
+            height: 48px;
+            border: 1px solid black;
+            border-radius: 50%;
+            position: relative;
+        }
+        
+        .social-icon-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: black;
+        }
+        
+        .icon-1 { width: 24px; height: 20px; }
+        .icon-2 { width: 12px; height: 12.5px; }
+        .icon-3 { width: 28px; height: 16px; }
+        .icon-4 { width: 16px; height: 20px; }
+        
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero-title {
+                font-size: 72px;
+                line-height: 86px;
+                letter-spacing: 20px;
+            }
+            
+            .hero-title-1 { left: 20px; }
+            .hero-title-2 { left: 280px; }
+            .hero-title-3 { right: 20px; }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 48px;
+                line-height: 58px;
+                letter-spacing: 10px;
+            }
+            
+            .nav {
+                gap: 100px;
+            }
+            
+            .contact-info {
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header container">
+        <nav class="nav">
+            <a href="#" class="nav-item">
+                <span class="nav-dot"></span>
+                главная
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-dot"></span>
+                посмотреть лоты
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-dot"></span>
+                об аукционе
+            </a>
+        </nav>
+        
+        <div class="logo">
+            <div class="logo-inner">
+                <div class="logo-outline"></div>
+                <div class="logo-fill"></div>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <a href="tel:+99995555555" class="contact-text">+9 999 555 5555</a>
+            </div>
+            <div class="contact-item">
+                <a href="mailto:info@sobaka.ge" class="contact-text">info@sobaka.ge</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-text">наб. Принсенграхт 263-265, Амстердам</span>
+            </div>
+        </div>
+    </header>
 
+    <main>
+        <section class="hero container">
+            <img src="https://placehold.co/1100x757" alt="Аукцион вещей" class="hero-image">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title hero-title-1">оНО</h1>
+                <h2 class="hero-title hero-title-2">ТЕБЕ</h2>
+                <h3 class="hero-title hero-title-3">НАДО</h3>
+                
+                <p class="hero-subtitle">
+                    Аукцион вещей, в которые никто не верил
+                </p>
+                
+                <a href="#" class="cta-button">Сделать ставку</a>
+            </div>
+        </section>
+    </main>
 
-
-<div className="w-[1100px] h-[757px] relative overflow-hidden">
-  <img className="w-[1100px] h-[757px] left-0 top-0 absolute" src="https://placehold.co/1100x757" />
-  <div className="w-[1100px] h-[757px] left-0 top-0 absolute opacity-60 bg-black" />
-  <div className="w-64 h-12 left-[794px] top-[656px] absolute border border-white" />
-  <div className="w-48 h-7 left-[825px] top-[668px] absolute text-center justify-start text-white text-xl font-medium font-['Raleway'] uppercase">Сделать ставку</div>
-  <div className="left-[50px] top-[668px] absolute justify-start"><span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7">Аукцион</span><span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7 tracking-[19.80px]"> </span><span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7">вещей,</span><span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7 tracking-[17.60px]"> </span><span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7 tracking-[24.20px]">в</span><span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7">которые</span><span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7 tracking-[17.60px]"> </span><span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7">никто</span><span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7 tracking-[19.80px]"> </span><span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7">не</span><span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7 tracking-[17.60px]"> </span><span class="text-white text-xl font-normal font-['Raleway'] uppercase leading-7">верил</span></div>
-  <div className="left-[663px] top-[435px] absolute text-right justify-start text-white text-8xl font-bold font-['Raleway'] uppercase leading-[115px] tracking-[30px]">НАДО</div>
-  <div className="left-[380.50px] top-[300px] absolute text-center justify-start text-white text-8xl font-bold font-['Raleway'] uppercase leading-[115px] tracking-[30px]">ТЕБЕ</div>
-  <div className="left-[50px] top-[165px] absolute justify-start text-white text-8xl font-bold font-['Raleway'] uppercase leading-[115px] tracking-[30px]">оНО</div>
-</div>
-
-
-<div className="w-[1100px] h-44 relative">
-  <div className="w-60 left-[810px] top-[1px] absolute inline-flex justify-start items-start gap-12">
-    <div className="w-12 h-12 rounded-full border border-black" />
-    <div className="w-6 h-5 bg-black" />
-    <div className="w-2 h-2.5 bg-black" />
-    <div className="w-12 h-12 rounded-full border border-black" />
-    <div className="w-7 h-4 bg-black" />
-    <div className="w-12 h-12 rounded-full border border-black" />
-    <div className="w-4 h-5 bg-black" />
-  </div>
-  <div className="w-28 h-0 left-[496.60px] top-[65px] absolute outline outline-1 outline-offset-[-0.50px] outline-black"></div>
-  <div className="w-28 left-[490.60px] top-[43px] absolute text-center justify-start text-black text-lg font-normal font-['Raleway']">об аукционе</div>
-  <div className="w-36 h-0 left-[477.60px] top-[44px] absolute outline outline-1 outline-offset-[-0.50px] outline-black"></div>
-  <div className="w-40 left-[468.60px] top-[22px] absolute text-center justify-start text-black text-lg font-normal font-['Raleway']">посмотреть лоты</div>
-  <div className="w-20 left-[513.70px] top-[1px] absolute text-center justify-start text-black text-lg font-normal font-['Raleway']">главная</div>
-  <div className="w-64 left-[51.10px] top-[49px] absolute justify-start text-black text-lg font-normal font-['Raleway'] leading-normal">наб. Принсенграхт 263-265, Амстердам</div>
-  <div className="w-32 h-0 left-[51px] top-[48px] absolute outline outline-1 outline-offset-[-0.50px] outline-black"></div>
-  <div className="w-64 h-6 left-[50px] top-[24px] absolute justify-start text-black text-lg font-normal font-['Raleway'] leading-normal">info@sobaka.ge</div>
-  <div className="w-32 h-0 left-[51px] top-[24px] absolute outline outline-1 outline-offset-[-0.50px] outline-black"></div>
-  <div className="w-64 h-6 left-[50.57px] top-0 absolute justify-start text-black text-lg font-normal font-['Raleway'] leading-normal">+9 999 555 5555</div>
-</div>
+    <footer class="footer container">
+        <div class="footer-contact">
+            <div class="contact-item">
+                <a href="tel:+99995555555" class="contact-text">+9 999 555 5555</a>
+            </div>
+            <div class="contact-item">
+                <a href="mailto:info@sobaka.ge" class="contact-text">info@sobaka.ge</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-text">наб. Принсенграхт 263-265, Амстердам</span>
+            </div>
+        </div>
+        
+        <nav class="footer-nav">
+            <a href="#" class="footer-nav-item">главная</a>
+            <a href="#" class="footer-nav-item">посмотреть лоты</a>
+            <a href="#" class="footer-nav-item">об аукционе</a>
+        </nav>
+        
+        <div class="social-icons">
+            <div class="social-icon">
+                <div class="social-icon-inner icon-1"></div>
+            </div>
+            <div class="social-icon">
+                <div class="social-icon-inner icon-2"></div>
+            </div>
+            <div class="social-icon">
+                <div class="social-icon-inner icon-3"></div>
+            </div>
+            <div class="social-icon">
+                <div class="social-icon-inner icon-4"></div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
